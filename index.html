@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Lost Coin, LLC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Sticky Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="images/logo1.png" alt="Logo For The Lost Coin" width="100em"></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="https://taxcure.com/professionals/lynette-rhodes/profile" target="_blank"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                        </svg></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to The Lost Coin</h1>
+        <p>"Rejoice with me; I have found my lost coin"</p>
+        <a href="contact.html" class="cta-btn">Reach Out</a>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+        <img src="images/intro-image-2-min-5.png" alt="Portrait of Lynette Rhodes" width="100em">
+        <div>
+            <h2>Welcome to The Lost Coin</h2>
+            <p>Lynette Rhodes, CPA, CFE, CFF</p>
+            <p>Deploying over 30+ years of experience in forensic accounting and tax resolution.</p>
+        </div>
+    </section>
+    <section class="services">
+        <h1>Our Services</h1>
+        <div class="service-card">
+            <h2>Tax Resolution</h2>
+            <p>Helping clients resolve complex tax problems with compassion and expertise.</p>
+            <a href="services.html" class="cta-btn">Learn More</a>
+        </div>
+        <div class="service-card">
+            <h2>Forensic Accounting</h2>
+            <p>Investigating fraud, embezzlement, and financial irregularities with precision.</p>
+            <a href="services.html" class="cta-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>Client Testimonials</h2>
+
+        <!-- Carousel wrapper -->
+        <div class="carousel">
+            <!-- Individual slides -->
+            <div class="testimonial active">
+                <blockquote>
+                    "My business had some accounting issues that needed attention before I could file an accurate tax
+                    return, so I phoned Lynette. She responded quickly, and resolved the issues in a matter of days. She
+                    took the time to educate me on how to set up systems and processes to keep my business on track"
+                    <footer>- Gaylene S.</footer>
+                </blockquote>
+            </div>
+            <div class="testimonial">
+                <blockquote>
+                    "We started getting threatening letters from the IRS for prior year tax returns that we did not
+                    realize we needed to file as we had been out of the country. Then we discovered significant mistakes
+                    on more recently filed returns made by another tax preparer. We hired Lynette to assist us in
+                    resolving our IRS problems. She keeps us updated regularly, and she is knowledgeable and detailed in
+                    her work. She is also helping us get our business records more organized so we can keep this from
+                    happening again. What a huge relief!"
+                    <footer>- Dave and Pam W.</footer>
+                </blockquote>
+            </div>
+            <div class="testimonial">
+                <blockquote>
+                    "The IRS made incorrect adjustments to my 2020 tax liability and withheld part of my refund. Lynette
+                    went to work on it and was able to get the IRS adjustments corrected and my full refund returned to
+                    me. She was tenacious and persistent and did not relent until the issue was resolved."
+                    <footer>- Holly B.</footer>
+                </blockquote>
+            </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <button class="prev">❮ Prev</button>
+        <button class="next">Next ❯</button>
+        <script>
+            // Grab all testimonials and buttons
+            const testimonials = document.querySelectorAll('.testimonial');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+            let currentIndex = 0;
+
+            // Function to show a testimonial by index
+            function showTestimonial(index) {
+                testimonials.forEach((t, i) => {
+                    t.classList.toggle('active', i === index);
+                });
+            }
+
+            // Event listeners for buttons
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+                showTestimonial(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % testimonials.length;
+                showTestimonial(currentIndex);
+            });
+
+            // Initialize first testimonial
+            showTestimonial(currentIndex);
+        </script>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <nav class="navbar">
+            <div class="logo"><img src="images/logo1.png" alt="Logo For The Lost Coin" width="100em"></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="https://taxcure.com/professionals/lynette-rhodes/profile" target="_blank"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path
+                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                        </svg></a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2025 The Lost Coin, LLC</p>
+        <p>
+            Disclaimer: No Rendering of Advice – The information contained within this website is provided for
+            informational purposes only and is not intended to substitute for obtaining accounting, tax, or financial
+            advice from a professional accountant. Presentation of the information via the Internet is not intended to
+            create, and receipt does not constitute an accountant-client relationship. Internet subscribers, users and
+            online readers are advised not to act upon this information without seeking the service of a professional
+            accountant. Any U.S. federal tax advice contained in this website is not intended to be used for the purpose
+            of avoiding penalties under U.S. federal tax law.
+        </p>
+        <p>
+            Disclaimer of Warranties and Limitations of Liability – This website is provided on an “as is” and “as
+            available” basis. Use of this website is at your own risk. We and our suppliers disclaim all warranties.
+            Neither we nor our suppliers shall be liable for any damages of any kind with the use of this website.
+        </p>
+        <p>
+            Accuracy of Information – While we use reasonable efforts to furnish accurate and up-to-date information, we
+            do not warrant that any information contained in or made available through this website is accurate,
+            complete, reliable, current or error-free. We assume no liability or responsibility for any errors or
+            omissions in the content of this website or such other materials or communications.</p>
+        <p>
+            Links to Third Party Websites – For your convenience, this website may contain hyperlinks to websites and
+            servers maintained by third parties. We do not control, evaluate, endorse or guarantee content found in
+            those sites. We do not assume any responsibility or liability for the actions, products, services and
+            content of these sites or the parties that operate them. Your use of such sites is entirely at your own
+            risk.
+        </p>
+    </footer>
+</body>
+
+</html>

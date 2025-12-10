@@ -1,0 +1,379 @@
+/* ============================================================
+   GLOBAL COLOR PALETTE (muted, accessible)
+   ============================================================ */
+:root {
+  --primary: #8a69ce;       /* Muted lavender for main branding */
+  --primary-dark: #644f92;  /* Darker lavender for headings/hover */
+  --secondary: #d19a8a;     /* Muted rose accent for buttons/links */
+  --secondary-dark: #b37c6d;/* Darker rose for hover/focus states */
+  --bg: #1e1e1e;            /* Dark neutral background for body */
+  --surface: #2a2a2a;       /* Dark gray for cards/sections */
+  --text: #f0f0f0;          /* Light gray text for readability */
+  --text-subtle: #cccccc;   /* Softer gray for secondary text */
+  --text-bright: #ffffff;   /* Bright white for footer/disclaimers */
+  --border: #3d3d3d;        /* Darker border lines */
+  --muted: #2f2a3d;         /* Muted dark lavender background */
+  --success: #6fbf8e;       /* Muted green for buttons */
+}
+
+/* ============================================================
+   BASE RESET & TYPOGRAPHY
+   ============================================================ */
+* {
+  box-sizing: border-box; /* Ensures padding/border don't break layouts */
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* Simple, accessible font */
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  color: var(--primary-dark);
+  margin: 0 0 0.75rem;
+  line-height: 1.25;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.6rem; }
+h3 { font-size: 1.25rem; }
+
+/* Paragraphs */
+p {
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+/* ============================================================
+   NAVIGATION BAR (sticky at top)
+   ============================================================ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--primary);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo left, links right */
+  align-items: center;
+  padding: 0.75rem 1rem;
+}
+
+.logo {
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  background: var(--secondary-dark);
+  outline: none;
+}
+
+/* ============================================================
+   HERO SECTION (big welcome banner)
+   ============================================================ */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: var(--muted);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 3vw, 3rem); /* Responsive font size */
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: var(--text-subtle);
+  margin-bottom: 1.5rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--secondary);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-btn:hover,
+.cta-btn:focus {
+  background: var(--secondary-dark);
+}
+
+/* ============================================================
+   WELCOME SECTION (portrait + intro text)
+   ============================================================ */
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.welcome img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%; /* Circular portrait */
+  margin-right: 2rem;
+  border: 3px solid var(--primary);
+}
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.about {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.about img {
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   SERVICES PAGE
+   ============================================================ */
+.services {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.services h1 {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.service-card h2 {
+  color: var(--primary-dark);
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  color: var(--text-subtle);
+  margin-bottom: 0.75rem;
+}
+
+.service-card .cta-btn {
+  background: var(--primary);
+}
+
+.service-card .cta-btn:hover,
+.service-card .cta-btn:focus {
+  background: var(--primary-dark);
+}
+
+
+/* Testimonials */
+.testimonials {
+  background: var(--muted);
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+}
+
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+blockquote {
+  max-width: 800px;
+  margin: 0.5rem auto;
+  background: var(--surface);
+  border-left: 6px solid var(--secondary);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  color: var(--text);
+}
+
+blockquote footer {
+  margin-top: 0.5rem;
+  color: var(--text-bright);
+  font-size: 0.95rem;
+}
+
+/* Carousel container */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.testimonials {
+  text-align: center;
+}
+/* Each testimonial */
+.testimonial {
+  display: none; /* Hide all by default */
+}
+
+.testimonial.active {
+  display: block; /* Show only the active one */
+}
+
+/* Navigation buttons */
+.testimonials button {
+  background: var(--secondary);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.testimonials button:hover {
+  background: var(--secondary-dark);
+}
+
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.contact {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.contact h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--text);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary);
+  outline: 2px solid var(--secondary);
+}
+
+button[type="submit"].cta-btn {
+  background: var(--success);
+}
+
+button[type="submit"].cta-btn:hover,
+button[type="submit"].cta-btn:focus {
+  background: #3a6247;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  margin-top: 3rem;
+  background: var(--primary-dark);
+  text-align: left;
+  padding: 1rem;
+  border-top: 4px solid var(--secondary);
+}
+
+footer p {
+  margin: 0.5rem auto;
+  max-width: 900px;
+  color: var(--text-bright);
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN (mobile/tablet adjustments)
+   ============================================================ */
+@media (max-width: 900px) {
+  .welcome {
+    flex-direction: column;
+    text-align: center;
+  }
+  .welcome img {
+    margin: 0 0 1rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .service-card {
+    padding: 1rem;
+  }
+  .contact {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
